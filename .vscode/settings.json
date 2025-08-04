@@ -1,5 +1,7 @@
 {
   "java.project.outputPath": "bin",
-"java.autobuild.enabled": false
-
+  "java.autobuild.enabled": false,
+  "code-runner.executorMap": {
+    "java": "cd $dir && javac -d ../bin $fileName && java -cp ../bin $fileNameWithoutExt"
+  }
 }

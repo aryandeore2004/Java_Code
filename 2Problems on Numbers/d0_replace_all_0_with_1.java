@@ -14,6 +14,27 @@
 // Output: 214
 // Explanation: The 2nd position from left contain 0. The resultant integer has replaced the 0 in that position with 1.
 
+// public class ReplaceZerosWithOnes {
+//     public static int replaceZeros(int n) {
+//         // Convert the integer to a string
+//         String str = String.valueOf(n);
+
+//         // Replace all '0' characters with '1'
+//         str = str.replace('0', '1');
+
+//         // Convert the string back to integer
+//         return Integer.parseInt(str);
+//     }
+
+//     public static void main(String[] args) {
+//         int input1 = 102003;
+//         int input2 = 204;
+
+//         System.out.println("Output 1: " + replaceZeros(input1)); // Output: 112113
+//         System.out.println("Output 2: " + replaceZeros(input2)); // Output: 214
+//     }
+// }
+
 public class d0_replace_all_0_with_1 {
   static int replaceZerosWithOnes(int num) {
     if (num == 0) {

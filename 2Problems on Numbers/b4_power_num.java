@@ -1,3 +1,5 @@
+// a^n 
+
 public class b4_power_num {
   public static void main(String[] args) {
     int a = 10;

@@ -8,7 +8,7 @@
 //    * *
 //     *
 
-public class diamond_hollow {
+public class a8_diamond_hollow {
   public static void main(String[] args) {
     int n = 5;
 
@@ -47,3 +47,9 @@ public class diamond_hollow {
     }
   }
 }
+
+// If they ask hollow patterns → always remember:
+
+// Use if (j == 1 || j == lastColumn) to print *.
+
+// Else print " ".

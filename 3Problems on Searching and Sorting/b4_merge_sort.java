@@ -11,6 +11,43 @@
 
 // Auxiliary Space Complexity: O(n)
 
+// ⚔️ Merge Sort vs Quick Sort (When to Use)
+// 📊 Quick Comparison
+// Feature	Quick Sort	Merge Sort
+// Time (Avg)	O(n log n)	O(n log n)
+// Time (Worst)	❌ O(n²)	✅ O(n log n)
+// Space	✅ O(log n)	❌ O(n)
+// Stability	❌ Not stable	✅ Stable
+// Speed (practical)	🔥 Faster	Slightly slower
+// ⚡ When to Use Quick Sort
+
+// 👉 Use Quick Sort when:
+
+// You want fast performance
+// Memory is limited
+// Data is in array (in-place sorting)
+// 🧠 Example:
+// Competitive coding
+// General-purpose sorting
+// Internal sorting in arrays
+// ⚖️ When to Use Merge Sort
+
+// 👉 Use Merge Sort when:
+
+// You need stable sorting
+// Working with linked list
+// Need guaranteed O(n log n)
+// 🧠 Example:
+// Sorting objects (like students by marks + name)
+// External sorting (large files)
+// Databases
+// 🔥 Simple Decision Rule
+
+// 👉 Ask yourself:
+
+// Need speed + less memory → Quick Sort
+// Need stability + guaranteed time → Merge Sort
+
 import java.util.*;
 
 class Solution {

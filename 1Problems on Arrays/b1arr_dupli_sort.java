@@ -22,26 +22,26 @@
 
 // Explanation: Total number of unique elements are 4, i.e[1,2,3,4] and Therefore return 4 after assigning [1,2,3,4] in the beginning of the array.
 
+public class b1arr_dupli_sort {
 
-public class b1arr_dupli_sort{
-
-    static int dupli(int arr[],int n){
+    static int dupli(int arr[], int n) {
         int i = 0;
-        for(int j=i+1;j<n;j++){
-            if(arr[i]!=arr[j]){
+        for (int j = i + 1; j < n; j++) {
+            if (arr[i] != arr[j]) {
                 i++;
-                arr[i]=arr[j];
+                arr[i] = arr[j];
             }
         }
-        return i+1;
+        return i + 1;
     }
+
     public static void main(String[] args) {
-        int arr[] = {1,2,2,3,3,4,4};
+        int arr[] = { 1, 2, 2, 3, 3, 4, 4 };
         int n = arr.length;
         int k = dupli(arr, n);
-        for(int i=0;i<k;i++){
-            System.out.print(arr[i]+" ");
+        for (int i = 0; i < k; i++) {
+            System.out.print(arr[i] + " ");
         }
-      
+
     }
 }

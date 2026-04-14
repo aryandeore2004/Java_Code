@@ -4,7 +4,7 @@
 // * *
 // *
 
-public class reverse_triangle {
+public class a4_reverse_triangle {
   public static void main(String[] args) {
     int n = 4;
     for (int i = 1; i <= n; i++) {

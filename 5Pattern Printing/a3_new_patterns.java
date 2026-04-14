@@ -8,7 +8,7 @@
 // * * 
 // * 
 
-public class new1 {
+public class a3_new_patterns {
   public static void main(String[] args) {
     int n = 5;
 

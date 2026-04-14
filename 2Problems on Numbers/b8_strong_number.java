@@ -34,7 +34,6 @@ public class b8_strong_number {
       int digit = num % 10;
       sum = sum + fact(digit);
       num = num / 10;
-
     }
     if (original == sum) {
       System.out.println("Hence " + original + " is a strong number");

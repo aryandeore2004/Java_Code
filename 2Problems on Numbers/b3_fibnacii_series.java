@@ -1,27 +1,44 @@
 
 public class b3_fibnacii_series {
-  public static void main(String args[]) {
-    int n = 5;
-    if (n == 0) {
-      System.out.println(0);
-    } else {
-      int fib[] = new int[n + 1];
-      fib[0] = 0;
-      fib[1] = 1;
-      for (int i = 2; i <= n; i++) {
-        fib[i] = fib[i - 1] + fib[i - 2];
-      }
-      System.out.println("The Fibonacci Series up to " + n + "th term:");
-      for (int i = 0; i <= n; i++) {
-        System.out.print(fib[i] + " ");
-      }
+  public static void main(String[] args) {
+    int n = 5; // number of terms
+
+    int a = 0, b = 1;
+    System.out.print("Fibonacci Series is: ");
+
+    for (int i = 0; i < n; i++) {
+      System.out.print(a + " ");
+      int next = a + b;
+      a = b;
+      b = next;
     }
   }
 }
 
+// public class b3_fibnacii_series {
+// public static void main(String args[]) {
+// int n = 5;
+// if (n == 0) {
+// System.out.println(0);
+// } else {
+// int fib[] = new int[n + 1];
+// fib[0] = 0;
+// fib[1] = 1;
+// for (int i = 2; i <= n; i++) {
+// fib[i] = fib[i - 1] + fib[i - 2];
+// }
+// System.out.println("The Fibonacci Series up to " + n + "th term:");
+// for (int i = 0; i <= n; i++) {
+// System.out.print(fib[i] + " ");
+// }
+
+// }
+// }
+// }
+
 // import java.util.*;
 
-// public class FibonacciRecursive {
+// public class b3_fibnacii_series {
 
 // // Recursive function to return nth Fibonacci number
 // static int fib(int n) {
@@ -41,3 +58,9 @@ public class b3_fibnacii_series {
 // }
 // }
 // }
+
+// 📊 Final Comparison Table
+// Method Time Complexity Space Complexity Efficiency
+// Iterative (a,b) O(n) O(1) ⭐⭐⭐ Best
+// Array (DP) O(n) O(n) ⭐⭐
+// Recursion O(2^n) O(n) ❌ Slow

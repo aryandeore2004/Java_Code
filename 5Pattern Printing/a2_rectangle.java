@@ -1,5 +1,5 @@
 
-public class rectangle {
+public class a2_rectangle {
   public static void main(String[] args) {
     int side = 4;
     for (int i = 0; i <= side - 1; i++) {

@@ -15,35 +15,72 @@
 // After the first loop is completed, set a while loop till the stack is non-empty.
 // Pop the character at the stack and start re-assigning the string.
 
-import java.io.*;
-import java.util.*;
+// public class ReverseString {
+//     public static void main(String[] args) {
 
-class a7_reverse_str {
+//         String str = "Hello";
+//         StringBuilder rev = new StringBuilder();
 
-  // Driver code
+//         for(int i = str.length() - 1; i >= 0; i--) {
+//             rev.append(str.charAt(i));
+//         }
+
+//         System.out.println(rev.toString());
+//     }
+// }
+// ***********************************************************************************************
+public class ReverseString {
   public static void main(String[] args) {
-    String str = "HELLO";
 
-    char[] reverseString = new char[str.length()];
-    Stack<Character> stack = new Stack<Character>();
-
-    for (int i = 0; i < str.length(); i++) {
-
-      stack.push(str.charAt(i));
-    }
+    String str = "aryan";
+    char[] arr = str.toCharArray();
 
     int i = 0;
-    while (!stack.isEmpty()) {
+    int j = arr.length - 1;
 
-      reverseString[i++] = stack.pop();
+    while (i < j) {
+      char temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+      i++;
+      j--;
     }
-    // return string object
-    str = new String(reverseString);
+    String str1 = new String(arr);
 
-    System.out.print("The reversed string is- " + str);
-
+    System.out.println(str1);
   }
 }
+
+// import java.io.*;
+// import java.util.*;
+
+// class a7_reverse_str {
+
+// // Driver code
+// public static void main(String[] args) {
+// String str = "HELLO";
+
+// char[] reverseString = new char[str.length()];
+// Stack<Character> stack = new Stack<Character>();
+
+// for (int i = 0; i < str.length(); i++) {
+
+// stack.push(str.charAt(i));
+// }
+
+// int i = 0;
+// while (!stack.isEmpty()) {
+
+// reverseString[i++] = stack.pop();
+// }
+// // return string object
+// str = new String(reverseString);
+
+// System.out.print("The reversed string is- " + str);
+
+// }
+// }
+
 // Output: The reversed string is- OLLEH
 
 // Time Complexity: O(N)

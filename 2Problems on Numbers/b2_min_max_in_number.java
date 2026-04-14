@@ -6,7 +6,7 @@ public class b2_min_max_in_number {
   public static void min_max(int num) {
     int min = Integer.MAX_VALUE;
     int max = Integer.MIN_VALUE;
-    while (num != 0) {
+    while (num > 0) {
       int digit = num % 10;
 
       if (min > digit) {
@@ -17,6 +17,7 @@ public class b2_min_max_in_number {
       }
       num = num / 10;
     }
+
     System.out.println("The min digit in number is " + min);
     System.out.println("The max digit in number is " + max);
 

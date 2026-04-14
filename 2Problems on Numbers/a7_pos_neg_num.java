@@ -18,6 +18,7 @@ public class a7_pos_neg_num {
     }
   }
 }
+
 // Output:
 
 // 5 is positive.

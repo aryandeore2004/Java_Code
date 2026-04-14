@@ -8,7 +8,7 @@
 //    ***
 //     *
 
-public class diamond_pattern {
+public class a7_diamond_pattern {
   public static void main(String[] args) {
     int n = 5;
 

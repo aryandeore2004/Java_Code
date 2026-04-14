@@ -5,11 +5,13 @@ public class b2_anagram_two_string {
 
   static boolean areAnagrams(String str1, String str2) {
     // If lengths differ, they can't be anagrams
+
     if (str1.length() != str2.length()) {
       return false;
     }
 
     // Convert to char array and sort
+
     char[] arr1 = str1.toCharArray();
     char[] arr2 = str2.toCharArray();
 

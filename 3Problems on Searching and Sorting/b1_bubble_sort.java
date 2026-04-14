@@ -28,6 +28,7 @@ public class b1_bubble_sort {
   static void bubble_s(int arr[], int n) {
     // Outer loop for number of passes (n-1 passes needed)
     for (int i = 0; i < n - 1; i++) {
+      boolean swapped = false;
 
       // Inner loop for comparing adjacent elements
       for (int j = 0; j < n - i - 1; j++) {
@@ -37,8 +38,12 @@ public class b1_bubble_sort {
           int temp = arr[j];
           arr[j] = arr[j + 1];
           arr[j + 1] = temp;
+          swapped = true;
         }
       }
+      // optimization: stop if already sorted
+      if (!swapped)
+        break;
     }
   }
 
@@ -56,3 +61,26 @@ public class b1_bubble_sort {
     System.out.println(Arrays.toString(arr));
   }
 }
+
+// ⚠️ Extra Important:
+
+// Why -1?
+
+// Because we compare:
+
+// arr[j] > arr[j + 1]
+
+// 👉 So j + 1 must be inside array
+// 👉 That’s why:
+
+// j < n - 1
+
+// And with optimization:
+
+// j < n - i - 1
+// 🎯 Final Interview Answer (Short)
+
+// 👉
+
+// n-1 → because after n-1 passes array becomes sorted
+// n-i-1 → because last i elements are already sorted, so we skip them

@@ -13,7 +13,6 @@
 // Insertion at beginning 
 // For inserting the element at the beginning we should first shift all elements of the array to left by 1 index and then insert an element at the 0th position
 
-
 // public class b3arr_add_ele {
 
 //     public static int[] insert_beg(int arr[], int n, int value) {
@@ -44,8 +43,6 @@
 //     }
 // }
 
-
-
 // import java.util.*;
 // class b3arr_add_ele{
 // static void insertatbegin(int[] arr,int n,int value)
@@ -60,7 +57,7 @@
 // {
 //     int n=8;
 //     int arr[]={10,9,14,8,20,48,16,9,0};
-//     int value=40;
+//     int value=40; 
 //     System.out.println("Before inserting the value at beginning:");
 //      for(int i=0;i<n;i++)
 //     {
@@ -74,18 +71,9 @@
 //         System.out.print(arr[i]+" ");
 //     }
 //     System.out.println();
-    
+
 // }
 // }
-
-
-
-
-
-
-
-
-
 
 // Insertion at Ending
 // For adding the elements at the end, just add the element at the nth index.
@@ -118,48 +106,39 @@
 //         System.out.print(arr[i]+" ");
 //     }
 //     System.out.println();
-    
+
 // }
 // }
-
-
-
-
-
-
 
 // Insertion at specific position
 // For adding the element at a specific position, just shift array elements to right by one position, and after that add an element at the desired position.
 
 import java.util.*;
-class b3arr_add_ele{
-static void insertatbegin(int[] arr,int n,int value,int pos)
-{
-    for(int i=n;i>=pos;i--)
-    {
-        arr[i]=arr[i-1];
+
+class b3arr_add_ele {
+    static void insertatbegin(int[] arr, int n, int value, int pos) {
+        for (int i = n; i >= pos; i--) {
+            arr[i] = arr[i - 1];
+        }
+        arr[pos - 1] = value;
     }
-    arr[pos-1]=value;
-}
-public static void main(String args[])
-{
-    int n=8;
-    int arr[]={10,9,14,8,20,48,16,9,0};
-    int pos =2;
-    int value=40;
-    System.out.println("Before inserting the value at beginning:");
-     for(int i=0;i<n;i++)
-    {
-        System.out.print(arr[i]+" ");
+
+    public static void main(String args[]) {
+        int n = 8;
+        int arr[] = { 10, 9, 14, 8, 20, 48, 16, 9, 0 };
+        int pos = 2;
+        int value = 40;
+        System.out.println("Before inserting the value at beginning:");
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+        insertatbegin(arr, n, value, pos);
+        System.out.println("After inserting the value at beginning:");
+        for (int i = 0; i <= n; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+
     }
-    System.out.println();
-    insertatbegin(arr,n,value,pos);
-    System.out.println("After inserting the value at beginning:");
-    for(int i=0;i<=n;i++)
-    {
-        System.out.print(arr[i]+" ");
-    }
-    System.out.println();
-    
-}
 }

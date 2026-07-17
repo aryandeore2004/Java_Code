@@ -1,20 +1,20 @@
 
-public class a9_char_freq_string {
-    public static void main(String[] args) {
-        String str = "takeuforward";
-        int[] freq = new int[26];
+// public class a9_char_freq_string {
+//     public static void main(String[] args) {
+//         String str = "takeuforward";
+//         int[] freq = new int[26];
 
-        for (char c : str.toCharArray()) {
-            freq[c - 'a']++;
-        }
+//         for (char c : str.toCharArray()) {
+//             freq[c - 'a']++;
+//         }
 
-        for (int i = 0; i < 26; i++) {
-            if (freq[i] > 0) {
-                System.out.print((char)(i + 'a') + "" + freq[i] + " ");
-            }
-        }
-    }
-}
+//         for (int i = 0; i < 26; i++) {
+//             if (freq[i] > 0) {
+//                 System.out.print((char)(i + 'a') + "" + freq[i] + " ");
+//             }
+//         }
+//     }
+// }
 
 // Step-by-Step Explanation
 // 1. int[] freq = new int[26];

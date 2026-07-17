@@ -42,10 +42,11 @@ public class b1_non_reapeating_char {
 
     // Step 2: Print non-repeating characters
     System.out.print("Non-repeating characters: ");
-    for (char c : str.toCharArray()) {
+    for (char c : freqMap.keySet()) {
       if (freqMap.get(c) == 1) {
         System.out.print(c + " ");
       }
+      System.out.println(c + "->" + freqMap.get(c));
     }
   }
 

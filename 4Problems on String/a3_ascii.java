@@ -21,11 +21,12 @@ class a3_ascii {
 
     public static void value(char ch) {
 
-        int ascii = ch;
+        int ascii = ch; // implicit type casting
         System.out.println("The ASCII value of " + ch + " is: " + ascii);
     }
 
     public static void main(String args[]) {
+
         Scanner sc = new Scanner(System.in);
         char ch = sc.next().charAt(0);
 

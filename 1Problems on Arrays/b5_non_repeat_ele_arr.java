@@ -18,7 +18,7 @@ public class b5_non_repeat_ele_arr {
     }
 
     public static void main(String args[]) {
-        int arr[] = {1, 1, 2, 5,12, 8, 2, 8,17};
+        int arr[] = { 1, 1, 2, 5, 12, 8, 2, 8, 17 };
         int n = arr.length;
         System.out.print("Non-repeating elements: ");
         nonRepeat_ele(arr, n);

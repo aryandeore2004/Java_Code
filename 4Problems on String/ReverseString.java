@@ -71,7 +71,8 @@ public class ReverseString {
 // int i = 0;
 // while (!stack.isEmpty()) {
 
-// reverseString[i++] = stack.pop();
+// reverseString[i] = stack.pop();
+// i++;
 // }
 // // return string object
 // str = new String(reverseString);

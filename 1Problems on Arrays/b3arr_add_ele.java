@@ -1,144 +1,123 @@
-// Example:
-// Input: N = 5, array[] = {1,2,3,4,5}
-// insertbeginning(6)
-// insertending(7)
-// insertatpos(8,4)
-// Output: 6,1,2,8,3,4,5,7
-// Explanation: 6 is added at the beginning and 7 is added at the end and 8 is added at position 4 
-// Solution
-// Disclaimer: Don't jump directly to the solution, try it out yourself first.
 
-// Approach: The approach is very simple for all three insertions.
+public class b3arr_add_ele {
 
-// Insertion at beginning 
-// For inserting the element at the beginning we should first shift all elements of the array to left by 1 index and then insert an element at the 0th position
+// 1. Insert at Beginning
 
-// public class b3arr_add_ele {
+// Approach
+// Create a new array of size n + 1.
+// Store the new element at index 0.
+// Copy all existing elements starting from index 1.
 
-//     public static int[] insert_beg(int arr[], int n, int value) {
-//         int newArr[] = new int[n + 1];
-//         newArr[0] = value;
-//         for (int i = 0; i < n; i++) {
-//             newArr[i + 1] = arr[i];
-//         }
-//         return newArr;
-//     }
+// Time Complexity
+// O(n)
 
-//     public static void main(String[] args) {
-//         int arr[] = {2, 45, 21, 11, 22, 4};
-//         int n = arr.length;
-//         int value = 40;
+// Space Complexity
+// O(n)
+// Code
 
-//         System.out.print("Original array: ");
-//         for (int i = 0; i < n; i++) {
-//             System.out.print(arr[i] + " ");
-//         }
+public static int[] insertAtBeginning(int[] arr, int num) {
 
-//         arr = insert_beg(arr, n, value);
+    int[] arr2 = new int[arr.length + 1];
 
-//         System.out.println("\nNew array: ");
-//         for (int i = 0; i < arr.length; i++) {
-//             System.out.print(arr[i] + " ");
-//         }
-//     }
-// }
+    arr2[0] = num;
 
-// import java.util.*;
-// class b3arr_add_ele{
-// static void insertatbegin(int[] arr,int n,int value)
-// {
-//     for(int i=n-1;i>=0;i--)
-//     {
-//         arr[i+1]=arr[i];
-//     }
-//     arr[0]=value;
-// }
-// public static void main(String args[])
-// {
-//     int n=8;
-//     int arr[]={10,9,14,8,20,48,16,9,0};
-//     int value=40; 
-//     System.out.println("Before inserting the value at beginning:");
-//      for(int i=0;i<n;i++)
-//     {
-//         System.out.print(arr[i]+" ");
-//     }
-//     System.out.println();
-//     insertatbegin(arr,n,value);
-//     System.out.println("After inserting the value at beginning:");
-//     for(int i=0;i<=n;i++)
-//     {
-//         System.out.print(arr[i]+" ");
-//     }
-//     System.out.println();
-
-// }
-// }
-
-// Insertion at Ending
-// For adding the elements at the end, just add the element at the nth index.
-
-// import java.util.*;
-// class b3arr_add_ele{
-// static void insertatbegin(int[] arr,int n,int value)
-// {
-//     for(int i=n-1;i>=0;i--)
-//     {
-//         arr[i+1]=arr[i];
-//     }
-//     arr[0]=value;
-// }
-// public static void main(String args[])
-// {
-//     int n=8;
-//     int arr[]={10,9,14,8,20,48,16,9,0};
-//     int value=40;
-//     System.out.println("Before inserting the value at beginning:");
-//      for(int i=0;i<n;i++)
-//     {
-//         System.out.print(arr[i]+" ");
-//     }
-//     System.out.println();
-//     insertatbegin(arr,n,value);
-//     System.out.println("After inserting the value at beginning:");
-//     for(int i=0;i<=n;i++)
-//     {
-//         System.out.print(arr[i]+" ");
-//     }
-//     System.out.println();
-
-// }
-// }
-
-// Insertion at specific position
-// For adding the element at a specific position, just shift array elements to right by one position, and after that add an element at the desired position.
-
-import java.util.*;
-
-class b3arr_add_ele {
-    static void insertatbegin(int[] arr, int n, int value, int pos) {
-        for (int i = n; i >= pos; i--) {
-            arr[i] = arr[i - 1];
-        }
-        arr[pos - 1] = value;
+    for (int i = 1; i < arr2.length; i++) {
+        arr2[i] = arr[i - 1];
     }
 
-    public static void main(String args[]) {
-        int n = 8;
-        int arr[] = { 10, 9, 14, 8, 20, 48, 16, 9, 0 };
-        int pos = 2;
-        int value = 40;
-        System.out.println("Before inserting the value at beginning:");
-        for (int i = 0; i < n; i++) {
-            System.out.print(arr[i] + " ");
-        }
-        System.out.println();
-        insertatbegin(arr, n, value, pos);
-        System.out.println("After inserting the value at beginning:");
-        for (int i = 0; i <= n; i++) {
-            System.out.print(arr[i] + " ");
-        }
-        System.out.println();
+    return arr2;
+}
 
+
+
+// 2. Insert at End
+
+// Approach
+// Create a new array of size n + 1.
+// Copy all elements.
+// Insert the new element at the last index.
+
+// Time Complexity
+// O(n)
+
+// Space Complexity
+// O(n)
+
+// Code
+public static int[] insertAtEnd(int[] arr, int num) {
+
+    int[] arr2 = new int[arr.length + 1];
+
+    for (int i = 0; i < arr.length; i++) {
+        arr2[i] = arr[i];
     }
+
+    arr2[arr.length] = num;
+
+    return arr2;
+}
+
+
+
+
+// 3. Insert at Any Position
+
+// Suppose
+
+// Position = 4
+// Element = 8
+
+// Array
+
+// 1 2 3 4 5
+
+// Result
+// 1 2 3 8 4 5
+
+// Approach
+// Copy elements before the position.
+// Insert the new element.
+// Copy the remaining elements.
+
+// Time Complexity
+// O(n)
+
+// Space Complexity
+// O(n)
+
+// Code
+public static int[] insertAtPosition(int[] arr, int pos, int num) {
+
+    int[] arr2 = new int[arr.length + 1];
+
+    for (int i = 0; i < pos - 1; i++) {
+        arr2[i] = arr[i];
+    }
+
+    arr2[pos - 1] = num;
+
+    for (int i = pos; i < arr2.length; i++) {
+        arr2[i] = arr[i - 1];
+    }
+
+    return arr2;
+}
+// Main Method
+public static void main(String[] args) {
+
+    int[] arr = {1, 2, 3, 4, 5};
+
+    arr = insertAtBeginning(arr, 6);
+
+    arr = insertAtEnd(arr, 7);
+
+    arr = insertAtPosition(arr, 4, 8);
+
+    for (int num : arr) {
+        System.out.print(num + " ");
+    }
+}
+
+// Output
+// 6 1 2 8 3 4 5 7
 }

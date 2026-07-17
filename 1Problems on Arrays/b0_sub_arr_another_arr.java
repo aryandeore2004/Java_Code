@@ -12,7 +12,7 @@
 //        arr2[]= [2,4,3,1,7,5,15]
 // Output: arr1[] is a subset of arr2[]
 
-// Example 2:
+// Example 2: 
 // Input: arr1[]= [1,3,4,5,2]
 //        arr2[]= [4,5,2]
 // Output: arr1[] is not a subset of arr2[]
@@ -23,128 +23,193 @@
 // Output: arr1[] is not a subset of arr2[]
 // Disclaimer: Don't jump directly to the solution, try it out yourself first.
 
-// Solution 1: Using two loops
 
-// We can use two nested loops. The outer loop iterates over the elements of arr1[] and the inner loop checks for that element in arr2[] by simple linear search.
 
-// Code:
+// Method 1: Using Nested Loops (Brute Force)
 
-// C++
-// Java
-import java.io.*;
-import java.util.*;
+// Idea
+// For every element of arr1, search it in arr2.
+// If any element is not found, it is not a subset.
+// Code
 
-class b0_sub_arr_another_arr {
+public class b0_sub_arr_another_arr {
 
-  static boolean isSubset(int arr1[], int m, int arr2[], int n) {
-    if (m > n)
-      return false;
-    for (int i = 0; i < m; i++) {
-      boolean present = false;
-      for (int j = 0; j < n; j++) {
-        if (arr2[j] == arr1[i]) {
-          present = true;
-          break;
+    public static boolean isSubset(int arr1[], int arr2[]) {
+
+        if (arr1.length > arr2.length) {
+            return false;
+         }
+
+        for (int i = 0; i < arr1.length; i++) {
+
+            boolean found = false;
+
+            for (int j = 0; j < arr2.length; j++) {
+
+                if (arr1[i] == arr2[j]) {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                return false;
+            }
         }
-      }
-      if (present == false)
-        return false;
+
+        return true;
     }
-    return true;
-  }
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    int arr1[] = { 1, 3, 4, 5, 2 };
-    int arr2[] = { 2, 4, 3, 1, 7, 5, 15 };
+        int arr1[] = {2, 4};
+        int arr2[] = {1, 2, 3, 4, 5};
 
-    int m = arr1.length;
-    int n = arr2.length;
-
-    boolean ans = isSubset(arr1, m, arr2, n);
-
-    if (ans == true)
-      System.out.print("arr1[] is a subset of arr2[]");
-    else
-      System.out.print("arr1[] is not a subset of arr2[]");
-
-  }
+        if (isSubset(arr1, arr2))
+            System.out.println("Subset");
+        else
+            System.out.println("Not a Subset");
+    }
 }
-// Output:
 
-// arr1[] is a subset of arr2[]
+// Output
+// Subset
 
-// Time Complexity: O(M*N)
 
-// Reason: The outer loop runs for M times and for every iteration inner loop
-// runs N times.
+// Complexity
+// Time: O(n × m)
+// Space: O(1)
 
-// Space Complexity: O(1)
 
-// Solution 2: Using Sorting and Binary Search
 
-// We can improve the time complexity by using sorting and binary search. We
-// first sort the arr2[] array and then we can use set a loop to traverse the
-// elements of arr1[] and search for them in arr2[] using binary search( as
-// arr2[] is sorted)
 
-// Code:
 
-// import java.io.*;
-// import java.util.*;
+// Method 2: Using HashSet (Best Approach)
+// Idea
+// Store all elements of arr2 in a HashSet.
+// Check whether every element of arr1 exists in the set.
+// Code
 
-// class b0_sub_arr_another_arr {
 
-// static boolean bSearch(int elem, int arr[], int n) {
-// int start = 0;
-// int end = n - 1;
-// while (start <= end) {
-// int mid = (start + end) / 2;
-// if (arr[mid] == elem)
-// return true;
-// else if (arr[mid] < elem)
-// start = mid + 1;
-// else end = mid - 1;
-// }
-// return false;
-// }
+// import java.util.HashSet;
 
-// static boolean isSubset(int arr1[], int m, int arr2[], int n) {
-// if (m > n) return false;
-// Arrays.sort(arr2);
-// for (int i = 0; i < m; i++) {
-// boolean present = bSearch(arr1[i], arr2, n);
-// if (present == false) return false;
-// }
-// return true;
-// }
+// public class ArraySubset {
 
-// public static void main(String[] args) {
+//     public static boolean isSubset(int arr1[], int arr2[]) {
 
-// int arr1[]={1,3,4,5,2};
-// int arr2[]={2,4,3,1,7,5,15};
+//         HashSet<Integer> set = new HashSet<>();
 
-// int m = arr1.length;
-// int n = arr2.length;
+//         for (int num : arr2) {
+//             set.add(num);
+//         }
 
-// boolean ans = isSubset(arr1, m, arr2, n);
+//         for (int num : arr1) {
 
-// if (ans == true)
-// System.out.print("arr1[] is a subset of arr2[]");
-// else System.out.print("arr1[] is not a subset of arr2[]");
+//             if (!set.contains(num))
+//                 return false;
+//         }
 
-// }
+//         return true;
+//     }
+
+//     public static void main(String[] args) {
+
+//         int arr1[] = {2, 4};
+//         int arr2[] = {1, 2, 3, 4, 5};
+
+//         if (isSubset(arr1, arr2))
+//             System.out.println("Subset");
+//         else
+//             System.out.println("Not a Subset");
+//     }
 // }
 
-// Output:
+// Output
+// Subset
 
-// arr1[] is a subset of arr2[]
+// Complexity
+// Time: O(n + m)
+// Space: O(m)
 
-// Time Complexity: O(NlogN+ MlogN)
 
-// Reason: Time required to sort Array of length N + Searching M elements using
-// Binary Search
 
-// Space Complexity: O(1)
 
-// Reason: We are not using any extra space
+
+
+// Method 3: Using Sorting + Two Pointers
+
+// Idea
+// Sort both arrays.
+// Compare them using two pointers.
+// If every element of arr1 is found in arr2, then it is a subset.
+// Code
+
+
+// import java.util.Arrays;
+
+// public class ArraySubset {
+
+//     public static boolean isSubset(int arr1[], int arr2[]) {
+
+//         Arrays.sort(arr1);
+//         Arrays.sort(arr2);
+
+//         int i = 0, j = 0;
+
+//         while (i < arr1.length && j < arr2.length) {
+
+//             if (arr1[i] == arr2[j]) {
+//                 i++;
+//                 j++;
+//             } else if (arr1[i] > arr2[j]) {
+//                 j++;
+//             } else {
+//                 return false;
+//             }
+//         }
+
+//         return i == arr1.length;
+//     }
+
+//     public static void main(String[] args) {
+
+//         int arr1[] = {2, 4};
+//         int arr2[] = {1, 2, 3, 4, 5};
+
+//         if (isSubset(arr1, arr2))
+//             System.out.println("Subset");
+//         else
+//             System.out.println("Not a Subset");
+//     }
+// }
+
+// Output
+// Subset
+
+// Complexity
+// Time: O(n log n + m log m)
+// Space: O(1)
+
+// Summary Table
+
+// | Method                     | Time Complexity          | Space Complexity | Best Use Case                   |
+// | -------------------------- | ------------------------ | ---------------- | ------------------------------- |
+// | **Nested Loops**           | **O(n × m)**             | **O(1)**         | Simple and beginner-friendly    |
+// | **HashSet**                | **O(n + m)**             | **O(m)**         | Best and most efficient         |
+// | **Sorting + Two Pointers** | **O(n log n + m log m)** | **O(1)**         | When extra space is not allowed |
+
+// comparison
+
+// | Feature             | Nested Loops | HashSet | Sorting  |
+// | ------------------- | ------------ | ------- | -------- |
+// | Fastest             | ❌            | ✅       | ⭐        |
+// | Extra Space         | ❌            | ✅       | ❌        |
+// | Uses Sorting        | ❌            | ❌       | ✅        |
+// | Easy to Understand  | ✅            | ✅       | Moderate |
+// | Interview Preferred | ⭐⭐⭐          | ⭐⭐⭐⭐⭐   | ⭐⭐⭐⭐     |
+
+
+// Final Recommendation
+// HashSet → Best overall (O(n + m)).
+// Sorting + Two Pointers → Good when extra memory is restricted.
+// Nested Loops → Simplest approach but slower (O(n × m)).

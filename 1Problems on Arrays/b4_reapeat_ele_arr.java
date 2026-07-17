@@ -1,111 +1,252 @@
-// import java.util.Arrays;
+// Problem Statement
 
-// public class b4_reapeat_ele_arr
+// Find all repeating (duplicate) elements in an array.
 
-// {
-// 	static void findRepeatingElements(int arr[]) {
-// 	    Arrays.sort(arr);
-// 	    System.out.print("The repeating elements are: ");
-// 	    for(int i=0;i<arr.length-1;i++) 
-// 	        if(arr[i] == arr[i+1])
-// 	            System.out.print(arr[i]+" ");
-// 	}
-// 	public static void main(String[] args) {
-// 		int[] arr = {1,1,2,3,4,4,5,2};
-// 		findRepeatingElements(arr);
-// 	}
+// Input
+
+// {1, 2, 3, 2, 4, 5, 1, 3}
+
+// Output
+
+// 1 2 3
+
+
+
+
+
+// 1. Brute Force (Nested Loops)
+
+// Code
+// public class RepeatingElements {
+//     public static void main(String[] args) {
+
+//         int[] arr = {1, 2, 3, 2, 4, 5, 1, 3};
+
+//         for (int i = 0; i < arr.length; i++) {
+
+//             boolean printed = false;
+
+//             for (int k = 0; k < i; k++) {
+//                 if (arr[i] == arr[k]) {
+//                     printed = true;
+//                     break;
+//                 }
+//             }
+
+//             if (printed)
+//                 continue;
+
+//             for (int j = i + 1; j < arr.length; j++) {
+//                 if (arr[i] == arr[j]) {
+//                     System.out.print(arr[i] + " ");
+//                     break;
+//                 }
+//             }
+//         }
+//     }
 // }
 
-// Output:
-// The repeating elements are: 1 2 4
+// Time Complexity
+// O(n²)
 
-// Time Complexity: O(NlogN)+O(N)
+// Space Complexity
+// O(1)
 
-// Reason: O(NlogN) for sorting. O(N) for iterating again in the array for finding a loop.
 
-// Space Complexity: O(1)
 
-// Reason: No extra spaces are used.
+
+
+// 2. HashMap
+
+// Code
+// import java.util.HashMap;
+
+// public class RepeatingElements {
+//     public static void main(String[] args) {
+
+//         int[] arr = {1, 2, 3, 2, 4, 5, 1, 3};
+
+//         HashMap<Integer, Integer> map = new HashMap<>();
+
+//         for (int num : arr) {
+//             map.put(num, map.getOrDefault(num, 0) + 1);
+//         }
+
+//         for (int key : map.keySet()) {
+//             if (map.get(key) > 1) {
+//                 System.out.print(key + " ");
+//             }
+//         }
+//     }
+// }
+
+// Time Complexity
+// O(n)
+
+// Space Complexity
+// O(n)
+
+
+
+
+
+
+// 3. LinkedHashMap (Maintains Order)
+// Code
+import java.util.LinkedHashMap;
 
 public class b4_reapeat_ele_arr {
-	static void findRepeatingElements(int arr[]) {
-		int cnt = 0;
-		int[] dup = new int[arr.length];
-		for (int i = 0; i < arr.length - 1; i++) {
-			for (int j = i + 1; j < arr.length; j++) {
-				if (arr[i] == arr[j])
-					dup[cnt++] = arr[i];
-			}
-		}
-		System.out.print("The repeating elements are: ");
-		for (int i = 0; i < cnt; i++)
-			if (dup[i] != dup[i + 1])
-				System.out.print(dup[i] + " ");
-	}
+    public static void main(String[] args) {
 
-	public static void main(String[] args) {
-		int[] arr = { 1, 1, 2, 3, 4, 4, 5, 2 };
-		findRepeatingElements(arr);
-	}
+        int[] arr = {1, 2, 3, 2, 4, 5, 1, 3};
+
+        LinkedHashMap<Integer, Integer> map = new LinkedHashMap<>();
+
+        for (int num : arr) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+
+        for (int key : map.keySet()) {
+            if (map.get(key) > 1) {
+                System.out.print(key + " ");
+            }
+        }
+    }
 }
 
-// Output:
+// Time Complexity
+// O(n)
 
-// The repeating elements are: 1 2 4
+// Space Complexity
+// O(n)
 
-// Time Complexity: O(N2)+O(N)
 
-// Reason: We are taking one element and searching its repeating element again
-// in the array. Also, iterating through the dup array which contains repeating
-// elements to find unique repeating elements.
 
-// Space Complexity: O(N)
 
-// Reason: We are using an array for storing all repeating elements.
 
-// 🔹 Method 1: Using HashSet (BEST & INTERVIEW-FRIENDLY ⭐)
-// import java.util.*;
 
-// public class RepeatingElements {
-// public static void main(String[] args) {
-// int[] arr = {1,1,2,3,4,4,5,2};
 
-// HashSet<Integer> seen = new HashSet<>();
-// HashSet<Integer> repeated = new HashSet<>();
 
-// for (int num : arr) {
-// if (!seen.add(num)) {
-// repeated.add(num);
-// }
-// }
-
-// System.out.println("The repeating elements are: " + repeated);
-// }
-// }
-
-// 🧠 Why this works?
-
-// HashSet does not allow duplicates
-
-// seen.add(num) returns false if element already exists
-
-// Time: O(n)
-
-// Space: O(n)
+// 4. HashSet
+// Code
+// import java.util.HashSet;
 
 // public class RepeatingElements {
-// public static void main(String[] args) {
-// int[] arr = {1,1,2,3,4,4,5,2};
+//     public static void main(String[] args) {
 
-// System.out.print("The repeating elements are: ");
+//         int[] arr = {1, 2, 3, 2, 4, 5, 1, 3};
 
-// for (int i = 0; i < arr.length; i++) {
-// for (int j = i + 1; j < arr.length; j++) {
-// if (arr[i] == arr[j]) {
-// System.out.print(arr[i] + " ");
-// break;
+//         HashSet<Integer> seen = new HashSet<>();
+//         HashSet<Integer> duplicate = new HashSet<>();
+
+//         for (int num : arr) {
+
+//             if (!seen.add(num)) {
+//                 duplicate.add(num);
+//             }
+//         }
+
+//         for (int num : duplicate) {
+//             System.out.print(num + " ");
+//         }
+//     }
 // }
+
+// Time Complexity
+// O(n)
+
+// Space Complexity
+// O(n)
+
+// Note: HashSet does not preserve insertion order.
+
+
+
+
+
+
+
+// 5. LinkedHashSet (Maintains Order)
+// Code
+
+// import java.util.LinkedHashSet;
+
+// public class RepeatingElements {
+//     public static void main(String[] args) {
+
+//         int[] arr = {1, 2, 3, 2, 4, 5, 1, 3};
+
+//         LinkedHashSet<Integer> seen = new LinkedHashSet<>();
+//         LinkedHashSet<Integer> duplicate = new LinkedHashSet<>();
+
+//         for (int num : arr) {
+
+//             if (!seen.add(num)) {
+//                 duplicate.add(num);
+//             }
+//         }
+
+//         for (int num : duplicate) {
+//             System.out.print(num + " ");
+//         }
+//     }
 // }
+
+// Time Complexity
+// O(n)
+
+// Space Complexity
+// O(n)
+
+
+
+
+
+// 6. Sorting
+
+// Code
+// import java.util.Arrays;
+
+// public class RepeatingElements {
+//     public static void main(String[] args) {
+
+//         int[] arr = {1, 2, 3, 2, 4, 5, 1, 3};
+
+//         Arrays.sort(arr);
+
+//         for (int i = 0; i < arr.length - 1; i++) {
+
+//             if (arr[i] == arr[i + 1]) {
+
+//                 if (i == 0 || arr[i] != arr[i - 1]) {
+//                     System.out.print(arr[i] + " ");
+//                 }
+//             }
+//         }
+//     }
 // }
-// }
-// }
+
+// Time Complexity
+// O(n log n)
+
+// Space Complexity
+// O(1) (ignoring sorting implementation details)
+
+// Note: Sorting changes the original order of the array.
+
+// Comparison Table
+
+// | Approach      | Time Complexity | Space Complexity | Preserves Original Order |
+// | ------------- | --------------- | ---------------- | ------------------------ |
+// | Brute Force   | O(n²)           | O(1)             | ✅                        |
+// | HashMap       | O(n)            | O(n)             | ❌                        |
+// | LinkedHashMap | O(n)            | O(n)             | ✅                        |
+// | HashSet       | O(n)            | O(n)             | ❌                        |
+// | LinkedHashSet | O(n)            | O(n)             | ✅                        |
+// | Sorting       | O(n log n)      | O(1)             | ❌                        |
+
+// Interview Preference
+
+// Best Overall: LinkedHashMap or LinkedHashSet (maintains insertion order).
+// Fastest without caring about order: HashMap or HashSet.
+// No extra space allowed: Brute Force (or Sorting if modifying the array is acceptable).

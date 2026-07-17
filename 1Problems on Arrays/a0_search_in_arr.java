@@ -52,19 +52,27 @@ public class a0_search_in_arr {
 // Code:
 
 // Java
-// public class a0_search_in_arr {
-// public static void main(String args[]) {
-// int arr[] = {6,7,9,5,3,10};
-// int n = arr.length;
-// int k = 10;
-// int low = 0, high = n - 1;
-// int ans = -1;
-// while (low <= high) {
-// int mid = (low + high) / 2;
-// if (arr[mid] > k) {
-// high = mid - 1;
-// } else if (arr[mid] < k) {
-// low = mid + 1;
-// } else {
-// ans = mid;
-// break;
+// public class BinarySearch {
+//     public static void main(String[] args) {
+//         int[] arr = {10, 20, 30, 40, 50, 60, 70};
+//         int target = 40;
+
+//         int low = 0;
+//         int high = arr.length - 1;
+
+//         while (low <= high) {
+//             int mid = low + (high - low) / 2;
+
+//             if (arr[mid] == target) {
+//                 System.out.println("Element found at index " + mid);
+//                 return;
+//             } else if (target < arr[mid]) {
+//                 high = mid - 1;
+//             } else {
+//                 low = mid + 1;
+//             }
+//         }
+
+//         System.out.println("Element not found");
+//     }
+// }

@@ -1,0 +1,340 @@
+🔥 1. Array Algorithms
+famous_algo/
+│
+├── first_non_repeating.java
+├── kadanes.java
+├── prefix_sum.java
+├── sliding_window.java
+├── two_pointer.java
+├── dutch_national_flag.java
+├── majority_element.java
+├── maximum_subarray.java
+├── maximum_product_subarray.java
+├── buy_sell_stock.java
+├── rearrange_array.java
+├── merge_intervals.java
+├── rotate_array.java
+├── missing_number.java
+├── duplicate_number.java
+└── trapping_rain_water.java
+
+🔍 2. Searching
+├── linear_search.java
+├── binary_search.java
+├── binary_search_first_last.java
+├── lower_bound.java
+├── upper_bound.java
+├── search_rotated_array.java
+├── find_peak.java
+├── square_root_binary_search.java
+└── binary_search_answer.java
+⭐ Must know
+
+Binary Search is extremely important.
+
+🔄 3. Sorting
+├── bubble_sort.java
+├── selection_sort.java
+├── insertion_sort.java
+├── merge_sort.java
+├── quick_sort.java
+├── heap_sort.java
+├── counting_sort.java
+├── radix_sort.java
+└── bucket_sort.java
+
+Remember:
+
+Bubble     → Swap
+Selection  → Minimum
+Insertion  → Insert
+Merge      → Divide + Merge
+Quick      → Pivot
+Heap       → Heap
+Counting   → Frequency
+Radix      → Digits
+🧮 4. String Algorithms
+├── reverse_string.java
+├── palindrome.java
+├── anagram.java
+├── frequency_count.java
+├── first_non_repeating.java
+├── longest_common_prefix.java
+├── string_compression.java
+├── longest_palindromic_substring.java
+├── substring_search.java
+├── kmp.java
+└── rabin_karp.java
+⭐ Important
+KMP
+Rabin-Karp
+Palindrome
+Anagram
+Frequency counting
+🔗 5. Linked List
+├── linked_list.java
+├── reverse_linked_list.java
+├── middle_linked_list.java
+├── detect_cycle.java
+├── remove_cycle.java
+├── merge_sorted_lists.java
+├── remove_nth_node.java
+├── intersection_linked_list.java
+├── palindrome_linked_list.java
+└── flatten_linked_list.java
+⭐ Most important concept
+
+Floyd's Cycle Detection
+
+slow → 1 step
+fast → 2 steps
+📚 6. Stack
+├── stack.java
+├── balanced_parentheses.java
+├── next_greater_element.java
+├── next_smaller_element.java
+├── previous_greater_element.java
+├── previous_smaller_element.java
+├── monotonic_stack.java
+├── stock_span.java
+├── largest_histogram.java
+└── min_stack.java
+⭐ Important
+
+Monotonic Stack
+
+Used in:
+
+Next Greater Element
+Stock Span
+Largest Rectangle
+Temperature problems
+🚶 7. Queue / Deque
+├── queue.java
+├── circular_queue.java
+├── deque.java
+├── sliding_window_maximum.java
+└── first_negative_window.java
+🌳 8. Binary Tree
+├── tree_traversal.java
+├── preorder.java
+├── inorder.java
+├── postorder.java
+├── level_order.java
+├── height_tree.java
+├── diameter_tree.java
+├── balanced_tree.java
+├── identical_tree.java
+├── symmetric_tree.java
+├── lowest_common_ancestor.java
+├── serialize_tree.java
+└── maximum_path_sum.java
+Traversals ⭐⭐⭐
+Preorder   → Root Left Right
+Inorder    → Left Root Right
+Postorder  → Left Right Root
+Levelorder → Level by level
+🌲 9. Binary Search Tree
+├── bst_search.java
+├── bst_insert.java
+├── bst_delete.java
+├── validate_bst.java
+├── kth_smallest_bst.java
+├── lca_bst.java
+└── sorted_array_to_bst.java
+🕸️ 10. Graph Algorithms
+
+Very important section.
+
+├── graph_representation.java
+├── bfs.java
+├── dfs.java
+├── connected_components.java
+├── cycle_detection.java
+├── bipartite_graph.java
+├── topological_sort.java
+├── kahn_algorithm.java
+├── dijkstra.java
+├── bellman_ford.java
+├── floyd_warshall.java
+├── prim.java
+├── kruskal.java
+├── union_find.java
+└── strongly_connected_components.java
+⭐ Must know
+BFS
+DFS
+Dijkstra
+Topological Sort
+Union Find
+Kruskal
+Prim
+🧩 11. Recursion
+├── recursion_basics.java
+├── factorial.java
+├── fibonacci.java
+├── power.java
+├── reverse_array.java
+├── subset.java
+├── subsequence.java
+├── permutation.java
+└── backtracking.java
+♟️ 12. Backtracking
+├── permutations.java
+├── combinations.java
+├── subsets.java
+├── combination_sum.java
+├── n_queens.java
+├── sudoku.java
+├── rat_in_maze.java
+└── word_search.java
+💰 13. Dynamic Programming
+
+Very important for interviews.
+
+├── fibonacci_dp.java
+├── climbing_stairs.java
+├── house_robber.java
+├── coin_change.java
+├── knapsack_01.java
+├── unbounded_knapsack.java
+├── subset_sum.java
+├── partition_equal_subset.java
+├── longest_common_subsequence.java
+├── longest_common_substring.java
+├── longest_increasing_subsequence.java
+├── edit_distance.java
+├── matrix_chain.java
+├── rod_cutting.java
+└── minimum_path_sum.java
+DP progression
+Recursion
+   ↓
+Memoization
+   ↓
+Tabulation
+   ↓
+Space Optimization
+🧮 14. Greedy Algorithms
+├── activity_selection.java
+├── fractional_knapsack.java
+├── job_sequencing.java
+├── minimum_coins.java
+├── jump_game.java
+├── gas_station.java
+├── meeting_rooms.java
+└── interval_scheduling.java
+🔢 15. Math Algorithms
+├── gcd.java
+├── lcm.java
+├── prime_check.java
+├── sieve_of_eratosthenes.java
+├── prime_factorization.java
+├── fast_power.java
+├── modular_arithmetic.java
+├── modular_exponentiation.java
+├── factorial.java
+├── fibonacci.java
+└── euclidean_algorithm.java
+🧮 16. Bit Manipulation
+├── odd_even_bit.java
+├── check_bit.java
+├── set_bit.java
+├── clear_bit.java
+├── toggle_bit.java
+├── count_set_bits.java
+├── power_of_two.java
+├── single_number.java
+├── xor_range.java
+└── subset_bitmask.java
+⭐ Must remember
+n & 1       → check odd/even
+n | (1<<i)  → set bit
+n & ~(1<<i) → clear bit
+n ^ (1<<i)  → toggle bit
+n ^ n       → 0
+n ^ 0       → n
+🌲 17. Trie
+├── trie.java
+├── trie_insert.java
+├── trie_search.java
+├── trie_prefix.java
+└── word_dictionary.java
+🧱 18. Heap / Priority Queue
+├── min_heap.java
+├── max_heap.java
+├── kth_largest.java
+├── kth_smallest.java
+├── top_k_elements.java
+├── merge_k_sorted_lists.java
+├── median_stream.java
+└── heap_sort.java
+📊 19. Important DSA Patterns
+
+These are more important than memorizing individual problems.
+
+├── two_pointer.java
+├── sliding_window.java
+├── prefix_sum.java
+├── difference_array.java
+├── fast_slow_pointer.java
+├── binary_search_answer.java
+├── monotonic_stack.java
+├── monotonic_queue.java
+├── merge_intervals.java
+├── cyclic_sort.java
+├── divide_and_conquer.java
+├── backtracking.java
+└── dynamic_programming.java
+⭐ Your Priority Order
+
+Don't try to learn everything at once. Follow this:
+
+1. Arrays
+      ↓
+2. Strings
+      ↓
+3. Searching
+      ↓
+4. Sorting
+      ↓
+5. Two Pointer
+      ↓
+6. Sliding Window
+      ↓
+7. Prefix Sum
+      ↓
+8. Linked List
+      ↓
+9. Stack + Queue
+      ↓
+10. Binary Tree
+      ↓
+11. BST
+      ↓
+12. Heap
+      ↓
+13. Recursion + Backtracking
+      ↓
+14. Graph
+      ↓
+15. Greedy
+      ↓
+16. Dynamic Programming
+      ↓
+17. Trie
+      ↓
+18. Bit Manipulation
+
+For your current folder, I'd first add:
+
+two_pointer.java
+binary_search.java
+bubble_sort.java
+selection_sort.java
+insertion_sort.java
+merge_sort.java
+quick_sort.java
+linked_list.java
+stack.java
+queue.java

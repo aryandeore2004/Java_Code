@@ -1,4 +1,4 @@
-// 1. Time Complexities
+// 1. Time_Complexities
 // Worst Case Complexity: O(n2)
 // Suppose, an array is in ascending order, and you want to sort it in descending order. In this case, worst case complexity occurs.
 // Each element has to be compared with each of the other elements so, for every nth element, (n-1) number of comparisons are made.
@@ -52,3 +52,38 @@ public class b3_insertion_sort {
     System.out.println(Arrays.toString(arr));
   }
 }
+
+
+
+// Insertion Sort — Short Dry Run
+
+// Theory:
+// Insertion Sort builds the sorted array one element at a time.
+// It takes the current element (key) and inserts it into its correct position among the previous sorted elements.
+
+// Example:
+
+// Array: [5, 3, 4, 1, 2]
+// Pass	Key	Action	Array
+// 1	3	3 < 5 → shift 5	[3, 5, 4, 1, 2]
+// | Pass | Key | Action          | Array             |
+// | ---- | --: | --------------- | ----------------- |
+// | 1    |   3 | 3 < 5 → shift 5 | `[3, 5, 4, 1, 2]` |
+// | 2    |   4 | 4 < 5 → shift 5 | `[3, 4, 5, 1, 2]` |
+// | 3    |   1 | Shift 5, 4, 3   | `[1, 3, 4, 5, 2]` |
+// | 4    |   2 | Shift 5, 4, 3   | `[1, 2, 3, 4, 5]` |
+
+// Basic logic
+// Take element → Compare with left elements
+//              ↓
+//        Bigger? Shift right
+//              ↓
+//        Insert at correct position
+
+// Time Complexity:
+
+// Best: O(n)
+// Average/Worst: O(n²)
+
+// Space: O(1)
+// Stable: Yes

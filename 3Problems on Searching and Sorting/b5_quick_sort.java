@@ -2,12 +2,14 @@
 // ✅ Best Case
 // O(n log n)
 // When pivot divides array into equal halves
+
 // ✅ Average Case
 // O(n log n)
 // Most practical scenarios
+
 // ❌ Worst Case
 // O(n²)
-// When array is already sorted OR pivot is bad
+// When array is already sorted OR pivot is highest or lowest element
 
 // 👉 Example:
 
@@ -62,72 +64,75 @@
  * 
  */
 
-public class b5_quick_sort {
 
-  // Partition function (your method)
-  static int partition(int[] arr, int low, int high) {
 
-    // Step 1: Choose middle element as pivot
-    int pivot = arr[(low + high) / 2];
+import java.util.*;
 
-    // Step 2: Loop until pointers cross
-    while (low <= high) {
+class b5_quick_sort {
 
-      // Move left pointer until element >= pivot
-      while (arr[low] < pivot) {
-        low++;
-      }
+    // This function places the pivot at its correct position
+    // and puts smaller elements on the left
+    // and larger elements on the right
+    static int partition(int[] arr, int low, int high) {
 
-      // Move right pointer until element <= pivot
-      while (arr[high] > pivot) {
-        high--;
-      }
+        // Choose the last element as pivot
+        int pivot = arr[high];
 
-      // Step 3: Swap elements if needed
-      if (low <= high) {
-        int temp = arr[low];
-        arr[low] = arr[high];
+        // i keeps track of the position
+        // where the smaller element should be placed
+        int i = low - 1;
+
+        // Traverse from low to high - 1
+        for (int j = low; j < high; j++) {
+
+            // If current element is smaller than pivot
+            if (arr[j] < pivot) {
+
+                // Move i forward
+                i++;
+
+                // Swap arr[i] and arr[j]
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+
+        // Put pivot in its correct position
+        int temp = arr[i + 1];
+        arr[i + 1] = arr[high];
         arr[high] = temp;
 
-        // Move both pointers
-        low++;
-        high--;
-      }
+        // Return the position of pivot
+        return i + 1;
     }
 
-    // Return partition index
-    return low;
-  }
+    // Quick Sort function
+    static void quickSort(int[] arr, int low, int high) {
 
-  // Quick Sort function
-  static void quickSort(int[] arr, int low, int high) {
+        // Continue only if there are at least 2 elements
+        if (low < high) {
 
-    // Base condition
-    if (low < high) {
+            // Partition the array
+            int pivotIndex = partition(arr, low, high);
 
-      // Get partition index
-      int pi = partition(arr, low, high);
+            // Sort the left part
+            quickSort(arr, low, pivotIndex - 1);
 
-      // Sort left part
-      quickSort(arr, low, pi - 1);
-
-      // Sort right part
-      quickSort(arr, pi, high);
+            // Sort the right part
+            quickSort(arr, pivotIndex + 1, high);
+        }
     }
-  }
 
-  // Main method
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    int[] arr = { 5, 3, 8, 4, 2 };
+        // Input array
+        int[] arr = {7, 2, 9, 4, 3};
 
-    // Call quick sort
-    quickSort(arr, 0, arr.length - 1);
+        // Call Quick Sort
+        quickSort(arr, 0, arr.length - 1);
 
-    // Print sorted array
-    System.out.println("Sorted Array:");
-    for (int num : arr) {
-      System.out.print(num + " ");
+        // Print sorted array
+        System.out.println(Arrays.toString(arr));
     }
-  }
 }

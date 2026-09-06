@@ -17,7 +17,6 @@ public class b2_min_max_in_number {
       }
       num = num / 10;
     }
-
     System.out.println("The min digit in number is " + min);
     System.out.println("The max digit in number is " + max);
 

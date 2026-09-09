@@ -12,7 +12,7 @@
 
 import java.util.*;
 
-public class a5arr_ele_freque {
+public class a5arr_ele_freque { 
 
     public static void hashm(int arr[], int n) {
 
@@ -49,8 +49,6 @@ public class a5arr_ele_freque {
 // Fastest approach.
 // Preserves insertion order using LinkedHashMap.
 // Suitable for large arrays.
-
-
 
 
 

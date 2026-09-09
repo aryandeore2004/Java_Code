@@ -1,0 +1,18 @@
+Which one should you use?
+
+Nearly sorted array → ⭐ Insertion Sort
+Guaranteed O(n log n) → ⭐ Merge Sort / Heap Sort
+Usually fastest in practice → ⭐ Quick Sort
+Need O(1) extra space + O(n log n) → ⭐ Heap Sort
+Small/simple learning problem → Bubble / Selection / Insertion
+Integers with small range → ⭐ Counting Sort
+Most important for interviews
+
+Know these very well:
+
+1. Bubble Sort → swapping
+2. Selection Sort → minimum selection
+3. Insertion Sort → shifting/inserting
+4. Merge Sort → divide & conquer
+5. Quick Sort → pivot & partition
+6. Heap Sort → heap

@@ -15,7 +15,6 @@
 import java.util.*;
 
 public class a0_0Two_sum {
-
     public static int[] twoSum(int[] arr, int target) {
         Map<Integer, Integer> map = new HashMap<>();
 
@@ -47,7 +46,6 @@ public class a0_0Two_sum {
         }
     }
 }
-
 // 🔷 Problem
 // arr = [3, 2, 4]
 // target = 6
